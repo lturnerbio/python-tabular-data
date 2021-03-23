@@ -9,6 +9,11 @@ from scipy import stats
 
 dataframe = pd.read_csv("iris.csv")
 
+"""
+ This first section should define the versicolor sub dataset only
+
+Figure should be created after running regression
+"""
 
 versicolor = dataframe[dataframe.species == 'Iris_versicolor']
 x = versicolor.petal_length_cm
@@ -24,6 +29,11 @@ plt.legend()
 plt.savefig("petal_v_sepal_length_regress_versicolor.png")
 
 
+"""
+This section should define the virginica sub dataset
+
+Figure should be created after running resgression and should only have values from the virginica sub dataset
+"""
 
 virginica = dataframe[dataframe.species == 'Iris_virginica']
 x = virginica.petal_length_cm
@@ -39,6 +49,11 @@ plt.legend()
 plt.savefig("petal_v_sepal_length_regress_virginica.png")
 
 
+"""
+This last section should define the setosa sub dataset
+
+Figure should be created after running regression and should only have values from the setosa sub dataset
+"""
 
 setosa = dataframe[dataframe.species == 'Iris_setosa']
 x = setosa.petal_length_cm
