@@ -1,7 +1,41 @@
+#! /usr/bin/env python3
 
 
+import pandas as pd
+import matplotlib.pyplot as plt
+import scipy
+from scipy import stats
 
 
+dataframe = pd.read_csv("iris.csv")
+
+def regression(df):
+
+    """
+    Module to regress petal length against sepal length for our includedIris dataset.
+    Parameters
+    ----------
+    df: dataframe
+        The dataframe containing the data we are looking for. Must have "petal_length_cm" and "seapl_length_cm" columns.
+    Returns
+    ----------
+    regression
+        The regression object which contains the slope and intercept of our regression, and other regression parameters.
+    Example
+    -----------
+    >>> regression(versicolor)
+    regression
+    """
+
+#if __name__ == '__main__':
+#    regression = regression(df)
+
+
+"""
+This first section should define the versicolor sub dataset only
+
+Figure should be created after running regression
+"""
 
 
 versicolor = dataframe[dataframe.species == 'Iris_versicolor']
