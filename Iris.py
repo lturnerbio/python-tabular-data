@@ -1,28 +1,17 @@
-#! /usr/bin/env python3
 
 
-import pandas as pd
-import matplotlib.pyplot as plt
-import scipy
-from scipy import stats
 
 
-dataframe = pd.read_csv("iris.csv")
 
-"""
- This first section should define the versicolor sub dataset only
-
-Figure should be created after running regression
-"""
 
 versicolor = dataframe[dataframe.species == 'Iris_versicolor']
-x = versicolor.petal_length_cm
-y = versicolor.sepal_length_cm
-regression = stats.linregress(x, y)
-slope = regression.slope
-intercept = regression.intercept
-plt.scatter(x, y, label = 'Data')
-plt.plot(x, slope * x + intercept, color = "orange", label = 'Fitted line')
+versicolor_x = versicolor.petal_length_cm
+versicolor_y = versicolor.sepal_length_cm
+regression_versicolor = stats.linregress(versicolor_x, versicolor_y)
+versicolor_slope = regression_versicolor.slope
+#versicolor_intercept = regression.intercept
+plt.scatter(versicolor_x, versicolor_y, label = 'Data')
+plt.plot(versicolor_x, versicolor_slope * versicolor_x + regression_versicolor, color = "orange", label = 'Fitted line')
 plt.xlabel("Petal length (cm)")
 plt.ylabel("Sepal length (cm)")
 plt.legend()
@@ -36,13 +25,13 @@ Figure should be created after running resgression and should only have values f
 """
 
 virginica = dataframe[dataframe.species == 'Iris_virginica']
-x = virginica.petal_length_cm
-y = virginica.sepal_length_cm
-regression = stats.linregress(x, y)
-slope = regression.slope
-intercept = regression.intercept
-plt.scatter(x, y, label = 'Data')
-plt.plot(x, slope * x + intercept, color = "orange", label = 'Fitted line')
+virginica_x = virginica.petal_length_cm
+virginica_y = virginica.sepal_length_cm
+regression_virginica = stats.linregress(virginica_x, virginica_y)
+virginica_slope = regression_virginica.slope
+#intercept = regression.intercept
+plt.scatter(virginica_x, virginica_y, label = 'Data')
+plt.plot(virginica_x, virginica_slope * virginica_x + regression_virginica, color = "orange", label = 'Fitted line')
 plt.xlabel("Petal length (cm)")
 plt.ylabel("Sepal length (cm)")
 plt.legend()
@@ -56,14 +45,16 @@ Figure should be created after running regression and should only have values fr
 """
 
 setosa = dataframe[dataframe.species == 'Iris_setosa']
-x = setosa.petal_length_cm
-y = setosa.sepal_length_cm
-regression = stats.linregress(x, y)
-slope = regression.slope
-intercept = regression.intercept
-plt.scatter(x, y, label = 'Data')
-plt.plot(x, slope * x + intercept, color = "orange", label = 'Fitted line')
+setosa_x = setosa.petal_length_cm
+setosa_y = setosa.sepal_length_cm
+regression_setosa = stats.linregress(setosa_x, setosa_y)
+setosa_slope = regression_setosa.slope
+#intercept = regression.intercept
+plt.scatter(setosa_x, setosa_y, label = 'Data')
+plt.plot(setosa_x, setosa_slope * setosa_x + regression_setosa, color = "orange", label = 'Fitted line')
 plt.xlabel("Petal length (cm)")
 plt.ylabel("Sepal length (cm)")
 plt.legend()
 plt.savefig("petal_v_sepal_length_regress_setosa.png")
+
+
